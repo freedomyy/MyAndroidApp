@@ -1,6 +1,8 @@
 package com.example.yanyan.myandroidapp;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +27,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    private void setUpActionBar() {
+        // Make sure we're running on Honeycomb or higher to use ActionBar APIs
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            ActionBar actionBar = getActionBar();
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+
+
 }
 
 
